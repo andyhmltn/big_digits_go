@@ -17,6 +17,7 @@ var big_digits = [][]string{
   {"7777777","      7","     7 ","    7  ","   7   ","  7    "," 7     "},
   {"  888  "," 8   8 "," 8   8 ","  888  "," 8   8 "," 8   8 ","  888  "},
   {"  9999 "," 9    9"," 9    9"," 999999","      9","      9"," 99999 "},
+  {"       ","       ","       ","       ","       ","       ","       "},
 }
 
 func main() {
@@ -35,6 +36,10 @@ func main() {
 
       if 0 <= digit && digit <= 9 {
         line += big_digits[digit][row] + " "
+      } else {
+        if stringOfDigits[column] == '_' {
+          line += big_digits[len(big_digits)-1][row]
+        }
       }
     }
 
